@@ -1,0 +1,172 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>quiz</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script src="js/mobile.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="css/quiz.css" />
+	
+</head>
+
+<body bgcolor="black">
+	<div id="page">
+		<div id="header">
+			<div>
+				<ul id="navigation">
+					<li>
+						<a href="index.html">Acasa</a>
+					</li>
+					<li>
+						<a href="personalitati.html">Personalitati</a>
+					</li>
+					<li >
+						<a href="obiective.html">Obiective</a>
+					</li>
+						<li class="selected">
+						<a href="quiz.html">Quiz</a>
+					</li>
+						<li >
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+					</li>
+					
+			</div>
+		</div>
+
+	<div id="page-wrap">
+
+		<h1>Quiz inventii si descoperiri</h1>
+		
+		<HEAD>
+
+<style type="text/css">
+<!--
+.bgclr {background-color: white; color: black; font-weight: bold;}
+-->
+</style>
+
+<script language="JavaScript">
+
+
+// Insert scooter questions number of questions
+var numQues = 5;
+
+// Insert number of choices in each question
+var numChoi = 3;
+
+// Insert number of questions displayed in answer area
+var answers = new Array(5);
+
+// Insert answers to questions
+answers[0] = "Alfred Nobel";
+answers[1] = "1990";
+answers[2] = "Fizica";
+answers[3] = "Fabrica de oxigen";
+answers[4] = "Albert Einstein";
+answers[5] = "";
+
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if (currSelection.checked) {
+        if (currSelection.value == answers[i]) {
+          score++;
+		break;
+        }
+      }
+    }
+  }
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  
+  form.solutions.value = correctAnswers;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<!-- STEP TWO: Copy this code into the BODY of your HTML document  -->
+
+<BODY>
+<form name="quiz">
+
+
+
+
+1. Cine a inventat dinamita?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q1" value="Marie Curie">Marie Curie</li>
+  <li><input type="radio" name="q1" value="Alfred Nobel">Alfred Nobel</li>
+  <li><input type="radio" name="q1" value="Thomas Edison">Thomas Edison</li>
+  
+   
+</ul>
+
+
+
+
+2. Telescopul HUbble a fost lansat in orbita in anul...?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q2" value="2002">2002</li>
+  <li><input type="radio" name="q2" value="1989">1989</li>
+  <li><input type="radio" name="q2" value="1990">1990</li>
+</ul>
+
+
+
+3.Marie Curie a fost laureata a Premiului Nobel pentru...?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q3" value="Literatura">Literatura</li>
+  <li><input type="radio" name="q3" value="Pace">Pace</li>
+  <li><input type="radio" name="q3" value="Fizica">Fizica</li>
+</ul>
+
+
+
+4.Care NU este un proiect al lui Elon Musk?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q4" value="Rachete reutilizabile">Rachete reutilizabile</li>
+  <li><input type="radio" name="q4" value="Colonizarea planetei Marte">Colonizarea planetei Marte</li>
+  <li><input type="radio" name="q4" value="Fabrica de oxigen">Fabrica de oxigen</li>
+</ul>
+
+5.Cine a emis teoria relativitaii?
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q5" value="Albert Einstein"> Albert Einstein</li>
+  <li><input type="radio" name="q5" value="Marie Curie">Marie Curie</li>
+  <li><input type="radio" name="q5" value="Rutherford">Rutherford</li>
+</ul>
+
+
+
+
+
+
+
+
+<input type="button" value="Get score" onClick="getScore(this.form)">
+<input type="reset" value="Clear answers">
+<p> Score = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
+Correct answers:<br>
+<textarea class="bgclr" name="solutions" wrap="virtual" rows="6" cols="100" disabled>
+</textarea>
+</form>
+</body>
+</html>
