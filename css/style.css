@@ -1,4 +1,4 @@
-/* Website template by freewebsitetemplates.com */
+
 body {
 	margin: 0;
 	padding: 0;
@@ -23,13 +23,13 @@ a:active {
 img {
 	border: none;
 }
-/*-------------------------------------------FONTS---------------------------------------------*/
+
 @font-face {
 	font-family: 'audiowide-regular-webfont';
 	src: url('../fonts/audiowide-regular-webfont.eot');
 	src: url('../fonts/audiowide-regular-webfont.woff') format('woff'), url('../fonts/audiowide-regular-webfont.ttf') format('truetype'), url('../fonts/audiowide-regular-webfont.svg') format('svg');
 }
-/*----------------------------------------header-styles---------------------------------------*/
+
 #header {
 	background: url(../images/bg-transparent1.png) repeat;
 	margin: 0;
@@ -144,7 +144,7 @@ img {
 	background-color: #000000;
 	color: #a3a3a3;
 }
-/*----------------------------------------body-home-styles---------------------------------------*/
+
 #body {
 	background-color: #000000;
 	margin: 0;
